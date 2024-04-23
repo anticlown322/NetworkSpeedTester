@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\C-lang Projects\\csharp\\CursedWork4sem\\NetworkSpeedTester\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{18549961-B9AC-4AC1-BFD2-E2CAA66C340F}|NetworkSpeedTester.csproj|d:\\c-lang projects\\csharp\\cursedwork4sem\\networkspeedtester\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{18549961-B9AC-4AC1-BFD2-E2CAA66C340F}|NetworkSpeedTester.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\C-lang Projects\\csharp\\CursedWork4sem\\NetworkSpeedTester\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "D:\\C-lang Projects\\csharp\\CursedWork4sem\\NetworkSpeedTester\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-23T19:21:51.064Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
