@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{18549961-B9AC-4AC1-BFD2-E2CAA66C340F}|NetworkSpeedTester.csproj|d:\\c-lang projects\\csharp\\cursedwork4sem\\networkspeedtester\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{18549961-B9AC-4AC1-BFD2-E2CAA66C340F}|NetworkSpeedTester.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18549961-B9AC-4AC1-BFD2-E2CAA66C340F}|NetworkSpeedTester.csproj|d:\\c-lang projects\\csharp\\cursedwork4sem\\networkspeedtester\\mvvm\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18549961-B9AC-4AC1-BFD2-E2CAA66C340F}|NetworkSpeedTester.csproj|solutionrelative:mvvm\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,7 +29,20 @@
               "ToolTip": "D:\\C-lang Projects\\csharp\\CursedWork4sem\\NetworkSpeedTester\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-23T19:21:51.064Z",
+              "WhenOpened": "2024-05-12T13:41:19.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "D:\\C-lang Projects\\csharp\\CursedWork4sem\\NetworkSpeedTester\\MVVM\\ViewModels\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "MVVM\\ViewModels\\MainViewModel.cs",
+              "ToolTip": "D:\\C-lang Projects\\csharp\\CursedWork4sem\\NetworkSpeedTester\\MVVM\\ViewModels\\MainViewModel.cs",
+              "RelativeToolTip": "MVVM\\ViewModels\\MainViewModel.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAqwCgAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-12T13:36:30.2Z",
               "EditorCaption": ""
             }
           ]
