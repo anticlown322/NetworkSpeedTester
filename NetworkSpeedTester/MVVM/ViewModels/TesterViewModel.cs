@@ -1,6 +1,8 @@
-﻿namespace NetworkSpeedTester.MVVM.ViewModels
+﻿using NetworkSpeedTester.Core;
+
+namespace NetworkSpeedTester.MVVM.ViewModels
 {
-    public class TesterViewModel
+    class TesterViewModel : ObservableObject
     {
     }
 }

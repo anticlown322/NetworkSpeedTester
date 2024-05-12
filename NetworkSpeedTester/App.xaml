@@ -9,6 +9,8 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Themes/Default/LeftMenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Themes/Default/TopMenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Themes/Default/StatResources.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModels:TesterViewModel}">

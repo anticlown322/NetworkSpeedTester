@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--Icons-->
+    <Image x:Key="CloseWindow" Source="../../Resources/Icons/close.png"/>
+    <Image x:Key="MinimizeWindow" Source="../../Resources/Icons/minimize.png"/>
+    <!--Images-->
+</ResourceDictionary>

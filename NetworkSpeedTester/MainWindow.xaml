@@ -7,22 +7,34 @@
         xmlns:viewModels="clr-namespace:NetworkSpeedTester.MVVM.ViewModels"
         mc:Ignorable="d"
         Height="800" 
-        Width="1200"
+        Width="1000"
         WindowStyle="None"
         ResizeMode="NoResize"
         AllowsTransparency="True"
         Background="Transparent"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        Name="wndMain">
 
+    <!--Setup-->
     <Window.DataContext>
         <viewModels:MainViewModel/>
     </Window.DataContext>
+
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding CloseWindowCommand}" 
+                    CommandParameter="{Binding ElementName=wndMain}" 
+                    Key="Esc" />
+        <KeyBinding Command="{Binding MinimizeWindowCommand}" 
+                    CommandParameter="{Binding ElementName=wndMain}" 
+                    Gesture="Ctrl+M"/>
+    </Window.InputBindings>
     
+    <!--View-->
     <Border Background="#272537"
             CornerRadius="20">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="75"/>
+                <RowDefinition Height="50"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -47,9 +59,17 @@
                        Grid.Row="0"
                        LastChildFill="True">
                 <Button DockPanel.Dock="Right" 
-                        Width="50"></Button>
+                        Command="{Binding CloseWindowCommand}"
+                        CommandParameter="{Binding ElementName=wndMain}"
+                        Style="{StaticResource TopMenuButtonTheme}"
+                        Content="{StaticResource CloseWindow}"/>
+
                 <Button DockPanel.Dock="Right" 
-                        Width="50"></Button>
+                        Command="{Binding MinimizeWindowCommand}"
+                        CommandParameter="{Binding ElementName=wndMain}"
+                        Style="{StaticResource TopMenuButtonTheme}"
+                        Content="{StaticResource MinimizeWindow}">
+                </Button>
                 <TextBlock></TextBlock>
             </DockPanel>
 

@@ -26,3 +26,4 @@ D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\MVVM\Views
 D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\MVVM\Views\AboutView.baml
 D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\MVVM\Views\HelpView.baml
 D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\MVVM\Views\TesterView.baml
+D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\Themes\Default\StatResources.baml

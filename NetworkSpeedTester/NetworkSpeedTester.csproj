@@ -89,6 +89,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Default\StatResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Default\TextBoxTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -99,6 +103,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVVM\Models\SettingsModel.cs" />
+    <Compile Include="MVVM\Models\TesterModel.cs" />
     <Compile Include="MVVM\ViewModels\AboutViewModel.cs" />
     <Compile Include="MVVM\ViewModels\HelpViewModel.cs" />
     <Compile Include="MVVM\ViewModels\MainViewModel.cs" />
@@ -142,10 +148,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MVVM\Models\" />
     <Folder Include="Resources\Fonts\" />
-    <Folder Include="Resources\Icons\" />
     <Folder Include="Resources\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\minimize.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

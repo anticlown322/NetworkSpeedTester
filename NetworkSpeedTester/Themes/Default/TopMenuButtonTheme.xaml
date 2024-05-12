@@ -1,4 +1,18 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
+    <Style TargetType="{x:Type Button}"
+           x:Key="TopMenuButtonTheme">
+        <Style.Setters>
+            <Setter Property="Margin" Value="0 5 10 5" />
+            <Setter Property="MinWidth" Value="40" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Background" Value="Transparent"/>
+        </Style.Setters>
+
+        <Style.Triggers>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="Background" Value="#22202f"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>
