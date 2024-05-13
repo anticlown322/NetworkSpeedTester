@@ -16,7 +16,6 @@ D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\NetworkSpe
 D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\App.baml
 D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\Themes\Default\LeftMenuButtonTheme.baml
-D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\Themes\Default\TextBoxTheme.baml
 D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\Themes\Default\TopMenuButtonTheme.baml
 D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\MVVM\Views\SettingsView.g.cs
 D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\MVVM\Views\AboutView.g.cs
@@ -27,3 +26,4 @@ D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\MVVM\Views
 D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\MVVM\Views\HelpView.baml
 D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\MVVM\Views\TesterView.baml
 D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\Themes\Default\StatResources.baml
+D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\Themes\Default\UIColors.baml

@@ -17,10 +17,6 @@ namespace NetworkSpeedTester.MVVM.ViewModels
         public RelayCommand MinimizeWindowCommand { get; set; }
         public RelayCommand CloseWindowCommand { get; set; }
 
-
-        //other commands
-        public RelayCommand DragWindowCommand { get; set; }
-
         //view models
         public TesterViewModel TesterVM { get; set; }
         public HelpViewModel HelpVM { get; set; }
@@ -39,9 +35,6 @@ namespace NetworkSpeedTester.MVVM.ViewModels
             }
         }
 
-        /********************
-         |  Implementation  |
-         ********************/
         public MainViewModel()
         {
             //viewModels init
@@ -74,9 +67,11 @@ namespace NetworkSpeedTester.MVVM.ViewModels
             //top menu
             MinimizeWindowCommand = new RelayCommand(MinimizeWindow);
             CloseWindowCommand = new RelayCommand(CloseWindow);
-            //other
-            DragWindowCommand = new RelayCommand(DragWindow);
         }
+
+        /********************
+        |  Implementation  |
+        ********************/
 
         void MinimizeWindow(object parameter)
         {
@@ -91,14 +86,6 @@ namespace NetworkSpeedTester.MVVM.ViewModels
             if (parameter is Window window)
             {
                 window.Close();
-            }
-        }
-
-        void DragWindow(object parameter)
-        {
-            if (parameter is Border border)
-            {
-               
             }
         }
     }

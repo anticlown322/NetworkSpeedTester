@@ -6,9 +6,9 @@
            x:Key="LeftMenuButtonTheme">
         <Style.Resources>
             <LinearGradientBrush x:Key="InnerTextColor">
-                <GradientStop Color="#eb2553" 
+                <GradientStop Color="{StaticResource MenuTextColorLight}" 
                               Offset="0" />
-                <GradientStop Color="#ab1a3b" 
+                <GradientStop Color="{StaticResource MenuTextColorDark}" 
                               Offset="1" />
             </LinearGradientBrush>
         </Style.Resources>
@@ -30,7 +30,7 @@
                 </Setter.Value>
             </Setter>
 
-            <Setter Property="Background" Value="#272537"/>
+            <Setter Property="Background" Value="{StaticResource MenuButtonColorLight_Solid}"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Height" Value="50"/>
             <Setter Property="FontSize" Value="22"/>
@@ -42,18 +42,19 @@
                     <BeginStoryboard x:Name="CheckAnimation">
                         <Storyboard>
                             <ColorAnimation Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
-                                            To="#1b1924"
+                                            To="{StaticResource MenuButtonColorDark}"
                                             Duration="0:0:0.2"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </Trigger.EnterActions>
                 <Trigger.ExitActions>
                     <StopStoryboard BeginStoryboardName="CheckAnimation"/>
-                    <!--code below works without StopStoryboard but i think there potential bugs-->
+                    <!--code below works without StopStoryboard but i think there potential bugs
+                    Maybe should use VisualStateManager-->
                     <BeginStoryboard>
                         <Storyboard>
                             <ColorAnimation Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
-                                            To="#272537"
+                                            To="{StaticResource MenuButtonColorLight}"
                                             Duration="0:0:0.2"/>
                         </Storyboard>
                     </BeginStoryboard>

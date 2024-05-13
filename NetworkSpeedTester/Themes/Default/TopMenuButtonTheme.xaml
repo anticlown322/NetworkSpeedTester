@@ -3,11 +3,13 @@
     <Style TargetType="{x:Type Button}"
            x:Key="TopMenuButtonTheme">
         <Style.Setters>
-            <Setter Property="Margin" Value="0 5 10 5" />
+            <Setter Property="Margin" Value="0 5 5 5" />
             <Setter Property="MinWidth" Value="40" />
             <Setter Property="BorderThickness" Value="0" />
-            <Setter Property="Background" Value="#272537"/>
+            <Setter Property="Background" Value="{StaticResource MenuButtonColorAverage_Solid}"/>
             <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
 
             <Setter Property="Template">
                 <Setter.Value>
@@ -29,7 +31,7 @@
                     <BeginStoryboard>
                         <Storyboard>
                             <ColorAnimation Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
-                                            To="#1b1924"
+                                            To="{StaticResource MenuButtonColorDark}"
                                             Duration="0:0:0.1"/>
                         </Storyboard>
                     </BeginStoryboard>
@@ -38,7 +40,7 @@
                     <BeginStoryboard>
                         <Storyboard>
                             <ColorAnimation Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
-                                            To="#272537"
+                                            To="{StaticResource MenuButtonColorAverage}"
                                             Duration="0:0:0.1"/>
                         </Storyboard>
                     </BeginStoryboard>

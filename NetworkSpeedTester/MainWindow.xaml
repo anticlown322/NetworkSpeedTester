@@ -28,10 +28,27 @@
                     CommandParameter="{Binding ElementName=wndMain}" 
                     Gesture="Ctrl+M"/>
     </Window.InputBindings>
-    
+
     <!--View-->
-    <Border Background="#272537"
-            CornerRadius="20">
+    <Border CornerRadius="20"
+            BorderThickness="1"
+            Opacity="0.97"
+            MouseDown="DragWindow">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 1">
+                <GradientStop Color="{StaticResource WindowBorderColor1}" Offset="0"/>
+                <GradientStop Color="{StaticResource WindowBorderColor2}" Offset="0.5"/>
+                <GradientStop Color="{StaticResource WindowBorderColor3}" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 0.7">
+                <GradientStop Color="{StaticResource PrimaryColorLight}" Offset="0"/>
+                <GradientStop Color="{StaticResource PrimaryColorDark}" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <!--Layout-->
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
@@ -42,60 +59,58 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!--Title-->
-            <TextBlock Grid.Row="0"
-                       Grid.Column="0"
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Center"
-                       Foreground="#eb2553"
-                       FontSize="24"
-                       FontWeight="Bold"
-                       Margin="20,0,0,0">
-                       Anticlown
-            </TextBlock>
-
             <!--Top Panel-->
-            <DockPanel Grid.Column="1"
-                       Grid.Row="0"
-                       LastChildFill="True">
-                <Button DockPanel.Dock="Right" 
-                        Command="{Binding CloseWindowCommand}"
+            <StackPanel Grid.Column="1"
+                        Grid.Row="0"
+                        MouseDown="DragWindow"
+                        Orientation="Horizontal"
+                        FlowDirection="RightToLeft"
+                        Margin="10 0 10 0">
+                <Button Command="{Binding CloseWindowCommand}"
                         CommandParameter="{Binding ElementName=wndMain}"
                         Style="{StaticResource TopMenuButtonTheme}"
                         Content="{StaticResource CloseWindow}"/>
-
-                <Button DockPanel.Dock="Right" 
-                        Command="{Binding MinimizeWindowCommand}"
+                <Button Command="{Binding MinimizeWindowCommand}"
                         CommandParameter="{Binding ElementName=wndMain}"
                         Style="{StaticResource TopMenuButtonTheme}"
-                        Content="{StaticResource MinimizeWindow}">
-                </Button>
-                <TextBlock></TextBlock>
-            </DockPanel>
+                        Content="{StaticResource MinimizeWindow}"/>
+            </StackPanel>
 
             <!--Left Panel-->
-            <StackPanel Grid.Row="1"
-                        Grid.Column="0">
-                <RadioButton Content="Tester"
+            <Border Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.RowSpan="2"
+                    CornerRadius="20 0 0 20"
+                    Background="{StaticResource PrimaryColorDark_Solid}">
+                <StackPanel>
+                    <TextBlock Grid.Row="0"
+                               Grid.Column="0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               Foreground="{StaticResource MenuTextColorLight_Solid}"
+                               FontSize="24"
+                               FontWeight="Bold"
+                               Margin="30,10,0,10">   
+                       Anticlown
+                    </TextBlock>
+                    <RadioButton Content="Tester"
                              Style="{StaticResource LeftMenuButtonTheme}"
                              IsChecked="True"
                              Command="{Binding TesterViewCommand}"/>
-                
-                <RadioButton Content="Help" 
+
+                    <RadioButton Content="Help" 
                              Style="{StaticResource LeftMenuButtonTheme}"
                              Command="{Binding HelpViewCommand}"/>
-                
-                <RadioButton Content="Settings"
+
+                    <RadioButton Content="Settings"
                              Style="{StaticResource LeftMenuButtonTheme}"
                              Command="{Binding SettingsViewCommand}"/>
-                
-                <RadioButton Content="About"
+
+                    <RadioButton Content="About"
                              Style="{StaticResource LeftMenuButtonTheme}"
                              Command="{Binding AboutViewCommand}"/>
-                
-                <RadioButton Content="Exit"
-                             Style="{StaticResource LeftMenuButtonTheme}"/>
-            </StackPanel>
+                </StackPanel>
+            </Border>
 
             <!--Client window-->
             <ContentControl Grid.Row="1"
