@@ -1,5 +1,7 @@
 ﻿using NetworkSpeedTester.Core;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace NetworkSpeedTester.MVVM.ViewModels
 {
@@ -14,6 +16,10 @@ namespace NetworkSpeedTester.MVVM.ViewModels
         //top menu commands
         public RelayCommand MinimizeWindowCommand { get; set; }
         public RelayCommand CloseWindowCommand { get; set; }
+
+
+        //other commands
+        public RelayCommand DragWindowCommand { get; set; }
 
         //view models
         public TesterViewModel TesterVM { get; set; }
@@ -68,6 +74,8 @@ namespace NetworkSpeedTester.MVVM.ViewModels
             //top menu
             MinimizeWindowCommand = new RelayCommand(MinimizeWindow);
             CloseWindowCommand = new RelayCommand(CloseWindow);
+            //other
+            DragWindowCommand = new RelayCommand(DragWindow);
         }
 
         void MinimizeWindow(object parameter)
@@ -83,6 +91,14 @@ namespace NetworkSpeedTester.MVVM.ViewModels
             if (parameter is Window window)
             {
                 window.Close();
+            }
+        }
+
+        void DragWindow(object parameter)
+        {
+            if (parameter is Border border)
+            {
+               
             }
         }
     }

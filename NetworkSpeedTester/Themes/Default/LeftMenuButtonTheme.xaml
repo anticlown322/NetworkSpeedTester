@@ -1,12 +1,15 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
     <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
            TargetType="{x:Type RadioButton}"
            x:Key="LeftMenuButtonTheme">
         <Style.Resources>
             <LinearGradientBrush x:Key="InnerTextColor">
-                <GradientStop Color="#eb2553" Offset="0" />
-                <GradientStop Color="#ab1a3b" Offset="1" />
+                <GradientStop Color="#eb2553" 
+                              Offset="0" />
+                <GradientStop Color="#ab1a3b" 
+                              Offset="1" />
             </LinearGradientBrush>
         </Style.Resources>
 
@@ -27,7 +30,7 @@
                 </Setter.Value>
             </Setter>
 
-            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Background" Value="#272537"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Height" Value="50"/>
             <Setter Property="FontSize" Value="22"/>
@@ -35,7 +38,26 @@
 
         <Style.Triggers>
             <Trigger Property="IsChecked" Value="True">
-                <Setter Property="Background" Value="#22202f"/>
+                <Trigger.EnterActions>
+                    <BeginStoryboard x:Name="CheckAnimation">
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                                            To="#1b1924"
+                                            Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <StopStoryboard BeginStoryboardName="CheckAnimation"/>
+                    <!--code below works without StopStoryboard but i think there potential bugs-->
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                                            To="#272537"
+                                            Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
             </Trigger>
         </Style.Triggers>
     </Style>
