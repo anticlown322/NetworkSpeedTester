@@ -27,3 +27,9 @@ D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\MVVM\Views
 D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\MVVM\Views\TesterView.baml
 D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\Themes\Default\StatResources.baml
 D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\Themes\Default\UIColors.baml
+D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\Components\InternetSpeedometer.g.cs
+D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\Components\TestGraph.g.cs
+D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\Components\TestResultBlock.g.cs
+D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\Components\InternetSpeedometer.baml
+D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\Components\TestGraph.baml
+D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\obj\Debug\Components\TestResultBlock.baml

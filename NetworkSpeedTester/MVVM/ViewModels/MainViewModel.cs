@@ -1,7 +1,5 @@
 ﻿using NetworkSpeedTester.Core;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
 
 namespace NetworkSpeedTester.MVVM.ViewModels
 {

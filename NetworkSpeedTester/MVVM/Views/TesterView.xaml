@@ -3,11 +3,61 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:NetworkSpeedTester.MVVM.Views"
+             xmlns:viewModels="clr-namespace:NetworkSpeedTester.MVVM.ViewModels"
+             xmlns:components="clr-namespace:NetworkSpeedTester.Components" 
+             d:DataContext="{d:DesignInstance Type=viewModels:TesterViewModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="450" 
-             d:DesignWidth="800">
+             d:DesignHeight="730" 
+             d:DesignWidth="1130">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="530"/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
 
+        <!--Left side-->
+        <Border Grid.Column="0"
+                Grid.Row="2"
+                Grid.RowSpan="3"
+                Margin="10 10 10 10"
+                CornerRadius="20"
+                Background="{StaticResource SecondaryColor_Solid}">
+            <StackPanel>
+
+            </StackPanel>
+        </Border>
+       
+        <!--Center-->
+        <components:InternetSpeedometer Grid.Column="1"
+                                        Grid.Row="2"
+                                        Grid.RowSpan="3"
+                                        Margin="15 0 15 0"/>
+
+        <Button Grid.Column="1"
+                Grid.Row="5"
+                Width="100"/>
+
+        <!--Right side-->
+        <components:TestResultBlock Grid.Column="2"
+                                    Grid.Row="1"
+                                    Grid.RowSpan="2"
+                                    Margin="10 10 10 10"/>
+        <components:TestResultBlock Grid.Column="2"
+                                    Grid.Row="3"
+                                    Margin="10 10 10 10"/>
+        <components:TestResultBlock Grid.Column="2"
+                                    Grid.Row="4"
+                                    Grid.RowSpan="2"
+                                    Margin="10 10 10 10"/>
     </Grid>
 </UserControl>

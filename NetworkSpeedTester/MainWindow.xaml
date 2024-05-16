@@ -7,7 +7,7 @@
         xmlns:viewModels="clr-namespace:NetworkSpeedTester.MVVM.ViewModels"
         mc:Ignorable="d"
         Height="800" 
-        Width="1000"
+        Width="1350"
         WindowStyle="None"
         ResizeMode="NoResize"
         AllowsTransparency="True"

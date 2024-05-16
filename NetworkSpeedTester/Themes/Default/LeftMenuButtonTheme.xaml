@@ -20,7 +20,6 @@
                         <Grid VerticalAlignment="Stretch"
                               HorizontalAlignment="Stretch"
                               Background="{TemplateBinding Background}">
-
                             <TextBlock Text="{TemplateBinding Content}"
                                        VerticalAlignment="Center"
                                        Margin="50, 0, 0, 0"
@@ -31,7 +30,6 @@
             </Setter>
 
             <Setter Property="Background" Value="{StaticResource MenuButtonColorLight_Solid}"/>
-            <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Height" Value="50"/>
             <Setter Property="FontSize" Value="22"/>
         </Style.Setters>

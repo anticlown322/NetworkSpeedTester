@@ -6,6 +6,8 @@
     <Color x:Key="PrimaryColorDark">#272537</Color>
     <SolidColorBrush x:Key="PrimaryColorLight_Solid">#343147</SolidColorBrush>
     <SolidColorBrush x:Key="PrimaryColorDark_Solid">#272537</SolidColorBrush>
+    <Color x:Key="SecondaryColor">#1d1b2b</Color>
+    <SolidColorBrush x:Key="SecondaryColor_Solid">#1d1b2b</SolidColorBrush>
 
     <!--Window Border Color-->
     <Color x:Key="WindowBorderColor1">#6D2FFF</Color>

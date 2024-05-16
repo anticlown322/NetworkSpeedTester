@@ -56,6 +56,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Components\InternetSpeedometer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\TestResultBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,6 +71,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\InternetSpeedometer.xaml.cs">
+      <DependentUpon>InternetSpeedometer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\TestResultBlock.xaml.cs">
+      <DependentUpon>TestResultBlock.xaml</DependentUpon>
     </Compile>
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
@@ -104,12 +118,11 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MVVM\Models\SettingsModel.cs" />
     <Compile Include="MVVM\Models\TesterModel.cs" />
-    <Compile Include="MVVM\ViewModels\AboutViewModel.cs" />
-    <Compile Include="MVVM\ViewModels\HelpViewModel.cs" />
     <Compile Include="MVVM\ViewModels\MainViewModel.cs" />
     <Compile Include="MVVM\ViewModels\SettingsViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\HelpViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\AboutViewModel.cs" />
     <Compile Include="MVVM\ViewModels\TesterViewModel.cs" />
     <Compile Include="MVVM\Views\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
@@ -149,7 +162,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Components\" />
     <Folder Include="Resources\Fonts\" />
     <Folder Include="Resources\Images\" />
   </ItemGroup>
