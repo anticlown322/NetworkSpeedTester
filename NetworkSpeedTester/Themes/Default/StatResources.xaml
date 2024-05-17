@@ -3,5 +3,9 @@
     <!--Icons-->
     <Image x:Key="CloseWindow" Source="../../Resources/Icons/close.png"/>
     <Image x:Key="MinimizeWindow" Source="../../Resources/Icons/minimize.png"/>
+    
     <!--Images-->
+    <Image x:Key="Upload" Source="../../Resources/Images/upload.png"/>
+    <Image x:Key="Download" Source="../../Resources/Images/download.png"/>
+    <Image x:Key="Ping" Source="../../Resources/Images/upload.png"/>
 </ResourceDictionary>

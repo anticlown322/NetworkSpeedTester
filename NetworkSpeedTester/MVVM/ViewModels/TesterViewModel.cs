@@ -10,7 +10,7 @@ namespace NetworkSpeedTester.MVVM.ViewModels
         public TesterViewModel()
         {
             _tester = new TesterModel();
-            _ = _tester.getPublicIP();
+            _ = _tester.getGeneralInfo();
         }
 
         public TesterModel Tester

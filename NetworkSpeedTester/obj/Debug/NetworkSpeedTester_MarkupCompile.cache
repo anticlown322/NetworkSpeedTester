@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\C-lang Projects\csharp\CursedWork4sem\NetworkSpeedTester\App.xaml
-12-861027310
+11-1765032240
 
-20-612812953
-13-38814620
-Components\InternetSpeedometer.xaml;Components\TestGraph.xaml;Components\TestResultBlock.xaml;MainWindow.xaml;MVVM\Views\SettingsView.xaml;MVVM\Views\AboutView.xaml;MVVM\Views\HelpView.xaml;MVVM\Views\TesterView.xaml;Themes\Default\LeftMenuButtonTheme.xaml;Themes\Default\StatResources.xaml;Themes\Default\TopMenuButtonTheme.xaml;Themes\Default\UIColors.xaml;
+19-1165886651
+36-663302317
+Components\InternetSpeedometer.xaml;Components\TestResultBlock.xaml;MainWindow.xaml;MVVM\Views\SettingsView.xaml;MVVM\Views\AboutView.xaml;MVVM\Views\HelpView.xaml;MVVM\Views\TesterView.xaml;Themes\Default\LeftMenuButtonTheme.xaml;Themes\Default\StatResources.xaml;Themes\Default\TopMenuButtonTheme.xaml;Themes\Default\UIColors.xaml;
 
 False
 

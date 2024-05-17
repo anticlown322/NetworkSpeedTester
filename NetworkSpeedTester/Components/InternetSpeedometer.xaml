@@ -28,15 +28,15 @@
                                             IsLargeArc="True"
                                             RotationAngle="0"/>
 
-                                <LineSegment Point="350,465"/>
+                                <LineSegment Point="380,445"/>
 
-                                <ArcSegment Point="150,465"
-                                            Size="210,220"
+                                <ArcSegment Point="120,445"
+                                            Size="220,220"
                                             SweepDirection="Counterclockwise"
                                             IsLargeArc="True"
                                             RotationAngle="0"/>
 
-                                <LineSegment Point="150,465"/>
+                                <LineSegment Point="120,445"/>
                             </PathSegmentCollection>
                         </PathFigure.Segments>
                     </PathFigure>
@@ -51,7 +51,7 @@
               Stroke="Violet"
               StrokeThickness="10"
               X1="250" Y1="275"
-              X2="150" Y2="450"
+              X2="125" Y2="425"
               Visibility="Visible"/>
         
         <!--Speed Value-->

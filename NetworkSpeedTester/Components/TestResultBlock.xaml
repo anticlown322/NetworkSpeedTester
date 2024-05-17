@@ -19,19 +19,85 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <!--Test result info-->
         <Border Grid.Column="1"
                 Grid.ColumnSpan="2"
                 Grid.Row="1"
                 Grid.RowSpan="2"
                 Background="{StaticResource SecondaryColor_Solid}"
                 CornerRadius="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="65"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="45"/>
+                    <ColumnDefinition Width="45"/>
+                    <ColumnDefinition Width="35"/>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="60"/>
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock Grid.Column="1"
+                           Grid.Row="0"
+                           Grid.ColumnSpan="4"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           Text="{Binding Title}"/>
+                <TextBlock Grid.Column="0"
+                           Grid.Row="1"
+                           Grid.ColumnSpan="3"
+                           VerticalAlignment="Center"
+                           Margin="10 0 0 0"
+                           FontSize="18"
+                           Foreground="White"
+                           Text="Average value:"/>
+                <TextBlock Grid.Column="3"
+                           Grid.ColumnSpan="2"
+                           Grid.Row="1"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Foreground="White"
+                           Text=""/>
+                <TextBlock Grid.Column="1"
+                           Grid.ColumnSpan="3"
+                           Grid.Row="2"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="30"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           Text="{Binding SpeedValue}"/>
+                <TextBlock Grid.Column="4"
+                           Grid.Row="2"
+                           VerticalAlignment="Bottom"
+                           HorizontalAlignment="Center"
+                           Margin="0 0 0 5"
+                           FontSize="18"
+                           Foreground="White"
+                           Text="{Binding Units}"/>
+            </Grid>
         </Border>
+        
+        <!--Circle image of test parametr-->
         <Border Grid.Column="0"
                 Grid.ColumnSpan="2"
                 Grid.Row="0"
                 Grid.RowSpan="2"
                 Background="{StaticResource SecondaryColor_Solid}"
                 CornerRadius="35">
+            <Rectangle RadiusX="35" 
+                       RadiusY="35"
+                       Margin="5 5 5 5">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="{Binding ImageURI}" Stretch="Uniform"/>
+                </Rectangle.Fill>
+            </Rectangle>
         </Border>
     </Grid>
 </UserControl>

@@ -15,14 +15,17 @@ using System.Windows.Shapes;
 
 namespace NetworkSpeedTester.Components
 {
-    /// <summary>
-    /// Логика взаимодействия для TestResultBlock.xaml
-    /// </summary>
     public partial class TestResultBlock : UserControl
     {
         public TestResultBlock()
         {
             InitializeComponent();
+            DataContext = this;
         }
+
+        public string Title { get; set; }
+        public string ImageURI { get; set; }
+        public string SpeedValue { get; set; }
+        public string Units { get; set; }
     }
 }

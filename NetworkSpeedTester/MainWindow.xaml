@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:NetworkSpeedTester"
         xmlns:viewModels="clr-namespace:NetworkSpeedTester.MVVM.ViewModels"
         mc:Ignorable="d"
-        Height="800" 
+        Height="720" 
         Width="1350"
         WindowStyle="None"
         ResizeMode="NoResize"
