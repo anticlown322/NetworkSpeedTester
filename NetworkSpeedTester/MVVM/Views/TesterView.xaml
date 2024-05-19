@@ -67,7 +67,7 @@
                            FontSize="20"
                            FontWeight="Bold"
                            Foreground="White"
-                           Text="{Binding IPCompanyASN}"/>
+                           Text="{Binding IpCompanyName}"/>
 
                 <!--Location coordinates-->
                 <TextBlock HorizontalAlignment="Left"
@@ -80,7 +80,7 @@
                            FontSize="20"
                            FontWeight="Bold"
                            Foreground="White"
-                           Text="{Binding IPLocation}"/>
+                           Text="{Binding IpLocation}"/>
 
                 <!--Country Name-->
                 <TextBlock HorizontalAlignment="Left"
@@ -93,7 +93,7 @@
                            FontSize="20"
                            FontWeight="Bold"
                            Foreground="White"
-                           Text="{Binding IPCountryName}"/>
+                           Text="{Binding IpCountryName}"/>
 
                 <!--City Name-->
                 <TextBlock HorizontalAlignment="Left"
@@ -106,7 +106,7 @@
                            FontSize="20"
                            FontWeight="Bold"
                            Foreground="White"
-                           Text="{Binding IPCityName}"/>
+                           Text="{Binding IpCityName}"/>
             </StackPanel>
         </Border>
        
@@ -115,27 +115,40 @@
                                         Grid.Row="2"
                                         Grid.RowSpan="3"
                                         Margin="15 0 15 0"/>
+        <Button Grid.Column="1"
+                Grid.Row="5"
+                Width="100"
+                Command="{Binding StartTestCommand}"/>
 
         <!--Right side-->
         <components:TestResultBlock Grid.Column="2"
                                     Grid.Row="1"
                                     Grid.RowSpan="2"
                                     Margin="10 10 10 10"
+                                    DataContext="{Binding Tester}"
                                     Title="Download"
-                                    ImageURI="../Resources/Images/download.png"
-                                    Units="Mb/s"/>
+                                    ParamIcon="../../Resources/Images/download.png"
+                                    AverValue="{Binding AverSpeedDownload}"
+                                    MaxValue="{Binding MaxSpeedDownload}"
+                                    Units="Mbps"/>
         <components:TestResultBlock Grid.Column="2"
                                     Grid.Row="3"
                                     Margin="10 10 10 10"
+                                    DataContext="{Binding Tester}"
                                     Title="Upload"
-                                    ImageURI="../Resources/Images/upload.png"
-                                    Units="Mb/s"/>
+                                    ParamIcon="../../Resources/Images/upload.png"
+                                    AverValue="{Binding AverSpeedUpload}"
+                                    MaxValue="{Binding MaxSpeedUpload}"
+                                    Units="Mbps"/>
         <components:TestResultBlock Grid.Column="2"
                                     Grid.Row="4"
                                     Grid.RowSpan="2"
                                     Margin="10 10 10 10"
+                                    DataContext="{Binding Tester}"
                                     Title="Ping"
-                                    ImageURI="../Resources/Images/ping.png"
+                                    AverValue="{Binding AverPing}"
+                                    MaxValue="{Binding MaxPing}"
+                                    ParamIcon="../../Resources/Images/ping.png"
                                     Units="ms"/>
     </Grid>
 </UserControl>

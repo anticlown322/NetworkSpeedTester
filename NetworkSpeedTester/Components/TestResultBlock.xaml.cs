@@ -23,9 +23,59 @@ namespace NetworkSpeedTester.Components
             DataContext = this;
         }
 
-        public string Title { get; set; }
-        public string ImageURI { get; set; }
-        public string SpeedValue { get; set; }
-        public string Units { get; set; }
+        #region Title property
+        public String Title
+        {
+            get { return (String)GetValue(TitleProperty); }
+            set { SetValue(TitleProperty, value); }
+        }
+
+        public static readonly DependencyProperty TitleProperty =
+            DependencyProperty.Register(nameof(Title), typeof(String), typeof(TestResultBlock));
+        #endregion
+
+        #region ParamIcon property
+        public ImageSource ParamIcon
+        {
+            get { return (ImageSource)GetValue(ParamIconProperty); }
+            set { SetValue(ParamIconProperty, value); }
+        }
+
+        public static readonly DependencyProperty ParamIconProperty = 
+            DependencyProperty.Register("ParamIcon", typeof(ImageSource), typeof(TestResultBlock), new UIPropertyMetadata(null));
+        #endregion
+
+        #region Average value property
+        public String AverValue
+        {
+            get { return (String)GetValue(AverValueProperty); }
+            set { SetValue(AverValueProperty, value); }
+        }
+
+        public static readonly DependencyProperty AverValueProperty =
+            DependencyProperty.Register(nameof(AverValue), typeof(String), typeof(TestResultBlock));
+        #endregion
+
+        #region Max value property
+        public String MaxValue
+        {
+            get { return (String)GetValue(MaxValueProperty); }
+            set { SetValue(MaxValueProperty, value); }
+        }
+
+        public static readonly DependencyProperty MaxValueProperty =
+            DependencyProperty.Register(nameof(MaxValue), typeof(String), typeof(TestResultBlock));
+        #endregion
+
+        #region Used units property
+        public String Units
+        {
+            get { return (String)GetValue(UnitsProperty); }
+            set { SetValue(UnitsProperty, value); }
+        }
+
+        public static readonly DependencyProperty UnitsProperty =
+            DependencyProperty.Register(nameof(Units), typeof(String), typeof(TestResultBlock));
+        #endregion
     }
 }

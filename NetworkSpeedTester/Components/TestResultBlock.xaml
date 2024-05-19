@@ -48,7 +48,7 @@
                            FontSize="24"
                            FontWeight="Bold"
                            Foreground="White"
-                           Text="{Binding Title}"/>
+                           Text="{Binding Title, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                 <TextBlock Grid.Column="0"
                            Grid.Row="1"
                            Grid.ColumnSpan="3"
@@ -63,7 +63,7 @@
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
                            Foreground="White"
-                           Text=""/>
+                           Text="{Binding AverValue, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                 <TextBlock Grid.Column="1"
                            Grid.ColumnSpan="3"
                            Grid.Row="2"
@@ -72,7 +72,7 @@
                            FontSize="30"
                            FontWeight="Bold"
                            Foreground="White"
-                           Text="{Binding SpeedValue}"/>
+                           Text="{Binding MaxValue, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                 <TextBlock Grid.Column="4"
                            Grid.Row="2"
                            VerticalAlignment="Bottom"
@@ -80,7 +80,7 @@
                            Margin="0 0 0 5"
                            FontSize="18"
                            Foreground="White"
-                           Text="{Binding Units}"/>
+                           Text="{Binding Units, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
             </Grid>
         </Border>
         
@@ -91,13 +91,8 @@
                 Grid.RowSpan="2"
                 Background="{StaticResource SecondaryColor_Solid}"
                 CornerRadius="35">
-            <Rectangle RadiusX="35" 
-                       RadiusY="35"
-                       Margin="5 5 5 5">
-                <Rectangle.Fill>
-                    <ImageBrush ImageSource="{Binding ImageURI}" Stretch="Uniform"/>
-                </Rectangle.Fill>
-            </Rectangle>
+            <Image Margin="5 5 5 5" 
+                   Source="{Binding ParamIcon, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
         </Border>
     </Grid>
 </UserControl>

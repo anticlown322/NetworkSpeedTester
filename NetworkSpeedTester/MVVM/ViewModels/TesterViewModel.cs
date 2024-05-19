@@ -1,5 +1,6 @@
 ﻿using NetworkSpeedTester.Core;
 using NetworkSpeedTester.MVVM.Models;
+using System.Windows;
 
 namespace NetworkSpeedTester.MVVM.ViewModels
 {
@@ -7,10 +8,14 @@ namespace NetworkSpeedTester.MVVM.ViewModels
     {
         private TesterModel _tester;
 
+        public RelayCommand StartTestCommand { get; set; }
+
         public TesterViewModel()
         {
             _tester = new TesterModel();
             _ = _tester.getGeneralInfo();
+
+            StartTestCommand = new RelayCommand(StartTest);
         }
 
         public TesterModel Tester
@@ -26,6 +31,9 @@ namespace NetworkSpeedTester.MVVM.ViewModels
         /********************
         |  Implementation  |
         ********************/
-
+        void StartTest(object parameter)
+        {
+            _ = _tester.startTest();
+        }
     }
 }
