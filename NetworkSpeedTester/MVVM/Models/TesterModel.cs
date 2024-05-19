@@ -1,4 +1,5 @@
 ﻿using IPinfo;
+using IPinfo.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -256,8 +257,8 @@ namespace NetworkSpeedTester.MVVM.Models
         ********************/
         public TesterModel()
         {
-            //string token = "e0025c4b88f57f"; //you may use it:) it allows 50.000 requests per month
-            //_ipInfoClient = new IPinfoClient.Builder().AccessToken(token).Build();
+            string token = "e0025c4b88f57f"; //you may use it:) it allows 50.000 requests per month
+            _ipInfoClient = new IPinfoClient.Builder().AccessToken(token).Build();
 
             initializeTesterValues();
         }
@@ -280,7 +281,7 @@ namespace NetworkSpeedTester.MVVM.Models
 
         public async Task getGeneralInfo()
         {
-            //0. init
+            //0. init info values
             initializeGeneralInfoValues();
 
             //1.get public ip
@@ -294,31 +295,33 @@ namespace NetworkSpeedTester.MVVM.Models
             catch
             { }
 
-
             //2.get info using IPinfo API
-            /*            IPResponse ipResponse = await _ipInfoClient.IPApi.GetDetailsAsync(publicIP);
-                        PublicIP = ipResponse.IP;
-                        IpCityName = ipResponse.City;
-                        IpCompanyName = ipResponse.Org;
-                        IpCountryName = ipResponse.CountryName;
-                        IpLocation = ipResponse.Loc;*/
+            IPResponse ipResponse = await _ipInfoClient.IPApi.GetDetailsAsync(publicIP);
+            PublicIP = ipResponse.IP;
+            IpCityName = ipResponse.City;
+            IpCompanyName = ipResponse.Org;
+            IpCountryName = ipResponse.CountryName;
+            IpLocation = ipResponse.Loc;
         }
 
         /* Tests */
         public async Task startTest()
         {
-            //0. init
+            //0. init test values with zeros
             initializeTestsValues();
 
             //1. Ping all servers in parallel and get the best server
             Random random = new Random();
-            string fileUrl = fileLinks[random.Next(0, fileLinks.Count)];
-            //await GetBestServerByPingAsync();
+            string fileUrl = //fileLinks[random.Next(0, fileLinks.Count)];
+            await GetBestServerByPingAsync();
 
             //2. start tests
+            CurrentPercentage = 0;
             processPingTest(new Uri(fileUrl).Host);
+            CurrentPercentage = 0;
             await processDownloadTest(fileUrl);
-            processUploadTest();
+            CurrentPercentage = 0;
+            await processUploadTest(fileUrl);
         }
         private void initializeTestsValues()
         {
@@ -333,48 +336,6 @@ namespace NetworkSpeedTester.MVVM.Models
             MaxSpeedDownload = 0;
             MaxSpeedUpload = 0;
             MaxPing = 0;
-        }
-
-        private async Task processDownloadTest(string fileUrl)
-        {
-            using (WebClient webClient = new WebClient())
-            {
-                string tempFilePath = Path.Combine(Path.GetTempPath(), "100mb.bin");
-                Stopwatch stopwatch = new Stopwatch();
-                const int FILE_SIZE = 100 * MByte_VALUE;
-
-                webClient.DownloadProgressChanged += (sender, e) =>
-                {
-                    if (e.BytesReceived == FILE_SIZE)
-                    {
-                        stopwatch.Stop();
-                    }
-                    else
-                    {
-                        CurrentSpeedDownload = Math.Round(e.BytesReceived / (stopwatch.Elapsed.TotalSeconds * MBit_VALUE), 3);
-                        if (CurrentSpeedDownload > MaxSpeedDownload)
-                            MaxSpeedDownload = CurrentSpeedDownload;
-                    }
-                };
-
-                stopwatch.Start();
-                await webClient.DownloadFileTaskAsync(new Uri(fileUrl), tempFilePath);
-                AverSpeedDownload = Math.Round(FILE_SIZE / (stopwatch.Elapsed.TotalSeconds * MBit_VALUE), 3);
-
-                try
-                {
-                    File.Delete(tempFilePath);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error deleting temporary file: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
-        }
-
-        private void processUploadTest()
-        {
-            //
         }
 
         private void processPingTest(string serverAddress)
@@ -403,6 +364,8 @@ namespace NetworkSpeedTester.MVVM.Models
                         //incorr ping
                         pingResults.Add(-1);
                     }
+
+                    CurrentPercentage += 5;
                 }
             }
             catch
@@ -414,6 +377,96 @@ namespace NetworkSpeedTester.MVVM.Models
             AverPing = pingResults.Where(x => x > -1).Sum(x => x) / numberOfPings;
         }
 
+        private async Task processDownloadTest(string fileUrl)
+        {
+            using (WebClient webClient = new WebClient())
+            {
+                const int FILE_SIZE = 100 * MByte_VALUE;
+                string tempFilePath = Path.Combine(Path.GetTempPath(), "100mb.bin");
+
+                Stopwatch stopwatch = new Stopwatch();
+
+                webClient.DownloadProgressChanged += (sender, e) =>
+                {
+                    if (e.BytesReceived == FILE_SIZE)
+                    {
+                        stopwatch.Stop();
+                        CurrentPercentage = 100;
+                    }
+                    else
+                    {
+                        CurrentPercentage = Math.Round(((double)e.BytesReceived / FILE_SIZE) * 100, 3);
+                        CurrentSpeedDownload = Math.Round(e.BytesReceived / (stopwatch.Elapsed.TotalSeconds * MBit_VALUE), 3);
+                        if (CurrentSpeedDownload > MaxSpeedDownload)
+                            MaxSpeedDownload = CurrentSpeedDownload;
+                    }
+                };
+
+                stopwatch.Start();
+                await webClient.DownloadFileTaskAsync(new Uri(fileUrl), tempFilePath);
+                AverSpeedDownload = Math.Round(FILE_SIZE / (stopwatch.Elapsed.TotalSeconds * MBit_VALUE), 3);
+
+                try
+                {
+                    File.Delete(tempFilePath);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error deleting temporary file: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+        private async Task processUploadTest(string fileUrl)
+        {
+            using (WebClient webClient = new WebClient())
+            {
+                string tempFilePath = Path.Combine(Path.GetTempPath(), "100mb.bin");
+
+                //create random 100 MB file
+                const int FILE_SIZE = 100 * MByte_VALUE;
+                byte[] data = new byte[FILE_SIZE];
+                Random rng = new Random();
+                rng.NextBytes(data);
+                File.WriteAllBytes(tempFilePath, data);
+
+                //start test
+                Stopwatch stopwatch = new Stopwatch();
+
+                webClient.UploadProgressChanged += (sender, e) =>
+                {
+                    //TO-DO: Check why if(e.BytesSent == FILE_SIZE) doesn't work
+
+                    CurrentPercentage = Math.Round(((double)e.BytesSent / FILE_SIZE) * 100, 3);
+                    if (CurrentPercentage == 100)
+                    {
+                        stopwatch.Stop();
+                    }
+                    else
+                    {
+
+                        CurrentSpeedUpload = Math.Round(e.BytesSent / (stopwatch.Elapsed.TotalSeconds * MBit_VALUE), 3);
+                        if (CurrentSpeedUpload > MaxSpeedUpload)
+                            MaxSpeedUpload = CurrentSpeedUpload;
+                    }
+                };
+
+                stopwatch.Start();
+                await webClient.UploadFileTaskAsync(new Uri(fileUrl), tempFilePath);
+                AverSpeedUpload = Math.Round(FILE_SIZE / (stopwatch.Elapsed.TotalSeconds * MBit_VALUE), 3);
+
+                try
+                {
+                    File.Delete(tempFilePath);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error deleting temporary file: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+        /* Utility funcs */
         private async Task<string> GetBestServerByPingAsync()
         {
             // Ping all servers in parallel

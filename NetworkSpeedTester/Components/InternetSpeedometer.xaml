@@ -58,7 +58,7 @@
         <TextBlock Canvas.Left="220"
                    Canvas.Top="200"
                    TextAlignment="Center"
-                   Text="45000"
+                   Text="{Binding CurrValue, RelativeSource={RelativeSource AncestorType=UserControl}}"
                    FontSize="24"
                    Foreground="White"/>
 
@@ -66,7 +66,7 @@
         <TextBlock Canvas.Left="235"
                    Canvas.Top="430"
                    TextAlignment="Center"
-                   Text="80%"
+                   Text="{Binding Percentage, RelativeSource={RelativeSource AncestorType=UserControl}}"
                    FontSize="24"
                    Foreground="White"/>
     </Canvas>
