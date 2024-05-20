@@ -40,7 +40,7 @@
                            FontWeight="Bold"
                            Foreground="White"
                            Text="General Info"/>
-                
+
                 <!--Public IP-->
                 <TextBlock HorizontalAlignment="Left"
                            Margin="10 5 0 5"
@@ -109,7 +109,7 @@
                            Text="{Binding IpCityName}"/>
             </StackPanel>
         </Border>
-       
+
         <!--Center-->
         <components:InternetSpeedometer Grid.Column="1"
                                         Grid.Row="2"
@@ -118,6 +118,7 @@
                                         DataContext="{Binding Tester}"
                                         CurrValue="{Binding CurrentValue}"
                                         Percentage="{Binding CurrentPercentage}"/>
+
         <Button Grid.Column="1"
                 Grid.Row="5"
                 Width="100"

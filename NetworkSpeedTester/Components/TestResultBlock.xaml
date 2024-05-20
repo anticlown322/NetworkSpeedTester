@@ -36,8 +36,8 @@
                     <ColumnDefinition Width="45"/>
                     <ColumnDefinition Width="45"/>
                     <ColumnDefinition Width="35"/>
-                    <ColumnDefinition Width="40"/>
-                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="50"/>
                 </Grid.ColumnDefinitions>
                 
                 <TextBlock Grid.Column="1"
@@ -61,23 +61,33 @@
                            Grid.ColumnSpan="2"
                            Grid.Row="1"
                            VerticalAlignment="Center"
-                           HorizontalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="5 0 0 0"
+                           FontSize="18"
                            Foreground="White"
                            Text="{Binding AverValue, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                <TextBlock Grid.Column="4"
+                           Grid.Row="1"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Margin="10 0 0 0"
+                           FontSize="14"
+                           Foreground="White"
+                           Text="{Binding Units, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                 <TextBlock Grid.Column="1"
                            Grid.ColumnSpan="3"
                            Grid.Row="2"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="30"
+                           FontSize="38"
                            FontWeight="Bold"
                            Foreground="White"
                            Text="{Binding MaxValue, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                 <TextBlock Grid.Column="4"
                            Grid.Row="2"
                            VerticalAlignment="Bottom"
-                           HorizontalAlignment="Center"
-                           Margin="0 0 0 5"
+                           HorizontalAlignment="Left"
+                           Margin="5 0 0 5"
                            FontSize="18"
                            Foreground="White"
                            Text="{Binding Units, RelativeSource={RelativeSource AncestorType=UserControl}}"/>

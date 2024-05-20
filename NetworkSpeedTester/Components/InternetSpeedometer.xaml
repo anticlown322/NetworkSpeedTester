@@ -53,21 +53,39 @@
               X1="250" Y1="275"
               X2="125" Y2="425"
               Visibility="Visible"/>
-        
-        <!--Speed Value-->
-        <TextBlock Canvas.Left="220"
-                   Canvas.Top="200"
-                   TextAlignment="Center"
-                   Text="{Binding CurrValue, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                   FontSize="24"
-                   Foreground="White"/>
 
-        <!--Test Percentage-->
-        <TextBlock Canvas.Left="235"
-                   Canvas.Top="430"
-                   TextAlignment="Center"
-                   Text="{Binding Percentage, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                   FontSize="24"
-                   Foreground="White"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="175"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="175"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="200"/>
+            </Grid.RowDefinitions>
+            
+            <!--Speed Value-->
+            <TextBlock Grid.Row="1"
+                       Grid.Column="1"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Margin="0 0 0 10"
+                       Text="{Binding CurrValue, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Foreground="White"/>
+
+            <!--Test Percentage-->
+            <TextBlock Grid.Row="2"
+                       Grid.Column="1"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Margin="0 50 0 0"
+                       Text="{Binding Percentage, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                       FontSize="24"
+                       Foreground="White"/>
+        </Grid>
     </Canvas>
 </UserControl>

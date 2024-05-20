@@ -89,6 +89,8 @@
                                VerticalAlignment="Center"
                                Foreground="{StaticResource MenuTextColorLight_Solid}"
                                FontSize="24"
+                               FontFamily="Century Gothic"
+                               FontStyle="Italic"
                                FontWeight="Bold"
                                Margin="30,10,0,10">   
                        Anticlown

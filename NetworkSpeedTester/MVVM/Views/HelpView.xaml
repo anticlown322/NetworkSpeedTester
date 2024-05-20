@@ -7,7 +7,49 @@
              mc:Ignorable="d" 
              d:DesignHeight="650" 
              d:DesignWidth="1130">
-    <Grid>
-            
-    </Grid>
+    <StackPanel>
+        <!--Title-->
+        <TextBlock 
+            HorizontalAlignment="Center"
+            FontSize="40"
+            FontWeight="Bold"
+            Foreground="White" 
+            Text="Help Section"/>
+        
+        <!--Help content-->
+        <TextBlock
+            Margin="20"
+            FontSize="22"
+            Foreground="White"
+            TextWrapping="WrapWithOverflow">
+            The purpose of this application is to test 
+            the speed of your Internet connection. <LineBreak/>
+            Before starting the test, check your internet connection. <LineBreak/>
+            Public information about your internet connection will be shown
+            in "General info" block on the "Tester" page. <LineBreak/>
+            To start the test, click the "Start" button on the "Tester" page. 
+            Be patient, the test will take some time. <LineBreak/>
+            You can monitor your Internet connection parameters live during the test. 
+            They are shown in blocks on the right and inside 
+            the speedometer on the "Tester" page. 
+            <LineBreak/>
+            <LineBreak/>
+            [!Note!] Please note that the upload average speed will 
+            be calculated approximately 10 seconds after the end of the test
+            <LineBreak/>
+            <LineBreak/>
+            Currently available hotkeys: <LineBreak/>
+            • Esc - close application<LineBreak/>
+            • Ctrl+M - minimize window<LineBreak/>
+            <LineBreak/>
+        </TextBlock>
+
+        <!--End-->
+        <TextBlock 
+            HorizontalAlignment="Center"
+            FontSize="40"
+            FontWeight="Bold"
+            Foreground="White" 
+            Text="Enjoy!"/>
+    </StackPanel>
 </UserControl>
