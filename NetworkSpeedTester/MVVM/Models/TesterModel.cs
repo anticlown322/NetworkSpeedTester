@@ -18,13 +18,13 @@ namespace NetworkSpeedTester.MVVM.Models
 {
     public class TesterModel : INotifyPropertyChanged
     {
-        //private
-        private IPinfoClient _ipInfoClient; //for collecting general info values
-
         private const int MByte_VALUE = 1024 * 1024;
         private const int MBit_VALUE = 1024 * 1024 / 8;
 
-        //list with servers for more accurate test results
+        //private
+        private IPinfoClient _ipInfoClient; //for collecting general info values
+
+        //diffetent servers for more accurate test results
         //all files are 100 MB
         readonly List<string> fileLinks = new List<string> {
             /* Germany */
@@ -34,6 +34,7 @@ namespace NetworkSpeedTester.MVVM.Models
             "https://hil-speed.hetzner.com/100MB.bin", // ?
             "https://hel1-speed.hetzner.com/100MB.bin", // ?
             "http://speedtest.fra1.de.leaseweb.net/100mb.bin", // Frankfurt 
+            "https://downloadtestfile.com/germany/100MB.bin", // ?
             /* Netherlands */
              "http://speedtest.ams1.nl.leaseweb.net/100mb.bin", // Amsterdam 
             "http://speedtest.ams2.nl.leaseweb.net/100mb.bin", // Amsterdam 
@@ -68,7 +69,6 @@ namespace NetworkSpeedTester.MVVM.Models
             /* Unknown */
             "http://speedtest.tele2.net/100MB.zip", //?
             "https://speedtest.rastrnet.ru/100MB.zip", //?
-            "https://downloadtestfile.com/germany/100MB.bin", // ?
             "http://ipv4.download.thinkbroadband.com/100MB.zip", // ?
             "http://212.183.159.230/100MB.zip", //?
             "https://proof.ovh.net/files/100Mb.dat" //?
@@ -130,36 +130,16 @@ namespace NetworkSpeedTester.MVVM.Models
         #endregion
 
         //current test values
-        private double _currentSpeedDownload;
-        private double _currentSpeedUpload;
-        private long _currentPing;
+        private double _currentValue;
         private double _currentPercentage;
 
         #region Propeties for current test values
-        public double CurrentSpeedDownload
+        public double CurrentValue
         {
-            get => _currentSpeedDownload;
+            get => _currentValue;
             set
             {
-                _currentSpeedDownload = value;
-                OnPropertyChanged();
-            }
-        }
-        public double CurrentSpeedUpload
-        {
-            get => _currentSpeedUpload;
-            set
-            {
-                _currentSpeedUpload = value;
-                OnPropertyChanged();
-            }
-        }
-        public long CurrentPing
-        {
-            get => _currentPing;
-            set
-            {
-                _currentPing = value;
+                _currentValue = value;
                 OnPropertyChanged();
             }
         }
@@ -284,7 +264,7 @@ namespace NetworkSpeedTester.MVVM.Models
             //0. init info values
             initializeGeneralInfoValues();
 
-            //1.get public ip
+            //1. get public ip
             var publicIP = "0.0.0.0";
             try
             {
@@ -311,24 +291,30 @@ namespace NetworkSpeedTester.MVVM.Models
             initializeTestsValues();
 
             //1. Ping all servers in parallel and get the best server
+            /*
+            may use random for testing with differant servers:
+
             Random random = new Random();
-            string fileUrl = //fileLinks[random.Next(0, fileLinks.Count)];
-            await GetBestServerByPingAsync();
+            fileLinks[random.Next(0, fileLinks.Count)];
+             */
+            string fileUrl = await GetBestServerByPingAsync();
 
             //2. start tests
+            //maybe should init percentage and value in tests
             CurrentPercentage = 0;
+            CurrentValue = 0;
             processPingTest(new Uri(fileUrl).Host);
+
+            CurrentValue = 0;
             CurrentPercentage = 0;
             await processDownloadTest(fileUrl);
+
+            CurrentValue = 0;
             CurrentPercentage = 0;
             await processUploadTest(fileUrl);
         }
         private void initializeTestsValues()
         {
-            CurrentSpeedDownload = 0;
-            CurrentSpeedUpload = 0;
-            CurrentPing = 0;
-
             AverSpeedDownload = 0;
             AverSpeedUpload = 0;
             AverPing = 0;
@@ -355,7 +341,7 @@ namespace NetworkSpeedTester.MVVM.Models
                         long res = reply.RoundtripTime;
 
                         pingResults.Add(res);
-                        CurrentPing = res;
+                        CurrentValue = res;
                         if (res > MaxPing)
                             MaxPing = res;
                     }
@@ -365,7 +351,7 @@ namespace NetworkSpeedTester.MVVM.Models
                         pingResults.Add(-1);
                     }
 
-                    CurrentPercentage += 5;
+                    CurrentPercentage += 5; //each ping is 5% of the test
                 }
             }
             catch
@@ -373,7 +359,6 @@ namespace NetworkSpeedTester.MVVM.Models
                 //MessageBox.Show($"Error pinging server: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-            //sum all correct pings and calc average
             AverPing = pingResults.Where(x => x > -1).Sum(x => x) / numberOfPings;
         }
 
@@ -383,9 +368,9 @@ namespace NetworkSpeedTester.MVVM.Models
             {
                 const int FILE_SIZE = 100 * MByte_VALUE;
                 string tempFilePath = Path.Combine(Path.GetTempPath(), "100mb.bin");
-
                 Stopwatch stopwatch = new Stopwatch();
 
+                //prepare webclient
                 webClient.DownloadProgressChanged += (sender, e) =>
                 {
                     if (e.BytesReceived == FILE_SIZE)
@@ -396,16 +381,17 @@ namespace NetworkSpeedTester.MVVM.Models
                     else
                     {
                         CurrentPercentage = Math.Round(((double)e.BytesReceived / FILE_SIZE) * 100, 3);
-                        CurrentSpeedDownload = Math.Round(e.BytesReceived / (stopwatch.Elapsed.TotalSeconds * MBit_VALUE), 3);
-                        if (CurrentSpeedDownload > MaxSpeedDownload)
-                            MaxSpeedDownload = CurrentSpeedDownload;
+                        CurrentValue = Math.Round(e.BytesReceived / (stopwatch.Elapsed.TotalSeconds * MBit_VALUE), 3);
+                        if (CurrentValue > MaxSpeedDownload)
+                            MaxSpeedDownload = CurrentValue;
                     }
                 };
 
+                //start test
                 stopwatch.Start();
                 await webClient.DownloadFileTaskAsync(new Uri(fileUrl), tempFilePath);
-                AverSpeedDownload = Math.Round(FILE_SIZE / (stopwatch.Elapsed.TotalSeconds * MBit_VALUE), 3);
 
+                AverSpeedDownload = Math.Round(FILE_SIZE / (stopwatch.Elapsed.TotalSeconds * MBit_VALUE), 3);
                 try
                 {
                     File.Delete(tempFilePath);
@@ -435,8 +421,6 @@ namespace NetworkSpeedTester.MVVM.Models
 
                 webClient.UploadProgressChanged += (sender, e) =>
                 {
-                    //TO-DO: Check why if(e.BytesSent == FILE_SIZE) doesn't work
-
                     CurrentPercentage = Math.Round(((double)e.BytesSent / FILE_SIZE) * 100, 3);
                     if (CurrentPercentage == 100)
                     {
@@ -444,15 +428,15 @@ namespace NetworkSpeedTester.MVVM.Models
                     }
                     else
                     {
-
-                        CurrentSpeedUpload = Math.Round(e.BytesSent / (stopwatch.Elapsed.TotalSeconds * MBit_VALUE), 3);
-                        if (CurrentSpeedUpload > MaxSpeedUpload)
-                            MaxSpeedUpload = CurrentSpeedUpload;
+                        CurrentValue = Math.Round(e.BytesSent / (stopwatch.Elapsed.TotalSeconds * MBit_VALUE), 3);
+                        if (CurrentValue > MaxSpeedUpload)
+                            MaxSpeedUpload = CurrentValue;
                     }
                 };
 
                 stopwatch.Start();
-                await webClient.UploadFileTaskAsync(new Uri(fileUrl), tempFilePath);
+                await webClient.UploadFileTaskAsync(new Uri(fileUrl), tempFilePath); //TO-DO: Check why there is a pause before ending 
+                                                                                     // it affects if(e.BytesSent == FILE_SIZE) statement
                 AverSpeedUpload = Math.Round(FILE_SIZE / (stopwatch.Elapsed.TotalSeconds * MBit_VALUE), 3);
 
                 try
@@ -480,7 +464,7 @@ namespace NetworkSpeedTester.MVVM.Models
             // Select the server with the lowest ping time
             var bestFileLink = pingResults.OrderBy(result => result.PingTime).FirstOrDefault();
 
-            return bestFileLink?.FileLink ?? fileLinks[0];
+            return bestFileLink?.FileLink ?? fileLinks[0]; //if no server found then use the first one
         }
 
         private async Task<long> MeasurePingTimeAsync(string serverHostname)

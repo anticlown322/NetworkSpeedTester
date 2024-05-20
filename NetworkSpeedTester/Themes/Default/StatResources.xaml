@@ -8,4 +8,7 @@
     <Image x:Key="Upload" Source="../../Resources/Images/upload.png"/>
     <Image x:Key="Download" Source="../../Resources/Images/download.png"/>
     <Image x:Key="Ping" Source="../../Resources/Images/upload.png"/>
+    <BitmapImage  x:Key="Github" UriSource="../../Resources/Images/github-logo.png"/>
+    <BitmapImage  x:Key="Telegram" UriSource="../../Resources/Images/telegram-logo.png"/>
+    <BitmapImage  x:Key="Linkedin" UriSource="../../Resources/Images/linkedin-logo.png"/>
 </ResourceDictionary>

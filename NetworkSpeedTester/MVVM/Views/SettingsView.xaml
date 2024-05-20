@@ -5,8 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:NetworkSpeedTester.MVVM.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="650" 
+             d:DesignWidth="1130">
     <Grid>
-            
+        <TextBlock HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Foreground="White"
+                   FontSize="100"
+                   FontWeight="Bold"
+            Text="Coming Soon!(It's a lie)"/>
     </Grid>
 </UserControl>

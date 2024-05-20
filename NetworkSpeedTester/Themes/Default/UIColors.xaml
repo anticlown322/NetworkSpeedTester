@@ -29,6 +29,10 @@
     <SolidColorBrush x:Key="MenuButtonColorDark_Solid">#1b1924</SolidColorBrush>
 
     <!--Other Colors-->
-    
-    
+    <Color x:Key="ColorDarkGray">#404040</Color>
+    <Color x:Key="ColorLightBlue">#7dbcde</Color>
+    <Color x:Key="ColorBlue">#51a2d5</Color>
+    <Color x:Key="ColorNavyBlue">#1c70c8</Color>
+    <Color x:Key="ColorDeepBlue">#022f8e</Color>
+
 </ResourceDictionary>

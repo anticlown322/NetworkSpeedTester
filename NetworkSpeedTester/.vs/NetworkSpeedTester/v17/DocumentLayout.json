@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\C-lang Projects\\csharp\\CursedWork4sem\\NetworkSpeedTester\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{18549961-B9AC-4AC1-BFD2-E2CAA66C340F}|NetworkSpeedTester.csproj|d:\\c-lang projects\\csharp\\cursedwork4sem\\networkspeedtester\\mvvm\\models\\testermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18549961-B9AC-4AC1-BFD2-E2CAA66C340F}|NetworkSpeedTester.csproj|solutionrelative:mvvm\\models\\testermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18549961-B9AC-4AC1-BFD2-E2CAA66C340F}|NetworkSpeedTester.csproj|d:\\c-lang projects\\csharp\\cursedwork4sem\\networkspeedtester\\mvvm\\views\\aboutview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{18549961-B9AC-4AC1-BFD2-E2CAA66C340F}|NetworkSpeedTester.csproj|solutionrelative:mvvm\\views\\aboutview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18549961-B9AC-4AC1-BFD2-E2CAA66C340F}|NetworkSpeedTester.csproj|d:\\c-lang projects\\csharp\\cursedwork4sem\\networkspeedtester\\mvvm\\views\\testerview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{18549961-B9AC-4AC1-BFD2-E2CAA66C340F}|NetworkSpeedTester.csproj|solutionrelative:mvvm\\views\\testerview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{18549961-B9AC-4AC1-BFD2-E2CAA66C340F}|NetworkSpeedTester.csproj|d:\\c-lang projects\\csharp\\cursedwork4sem\\networkspeedtester\\mvvm\\viewmodels\\aboutviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18549961-B9AC-4AC1-BFD2-E2CAA66C340F}|NetworkSpeedTester.csproj|solutionrelative:mvvm\\viewmodels\\aboutviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,26 +27,26 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "TesterView.xaml",
-              "DocumentMoniker": "D:\\C-lang Projects\\csharp\\CursedWork4sem\\NetworkSpeedTester\\MVVM\\Views\\TesterView.xaml",
-              "RelativeDocumentMoniker": "MVVM\\Views\\TesterView.xaml",
-              "ToolTip": "D:\\C-lang Projects\\csharp\\CursedWork4sem\\NetworkSpeedTester\\MVVM\\Views\\TesterView.xaml",
-              "RelativeToolTip": "MVVM\\Views\\TesterView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-19T13:29:18.537Z",
+              "Title": "AboutViewModel.cs",
+              "DocumentMoniker": "D:\\C-lang Projects\\csharp\\CursedWork4sem\\NetworkSpeedTester\\MVVM\\ViewModels\\AboutViewModel.cs",
+              "RelativeDocumentMoniker": "MVVM\\ViewModels\\AboutViewModel.cs",
+              "ToolTip": "D:\\C-lang Projects\\csharp\\CursedWork4sem\\NetworkSpeedTester\\MVVM\\ViewModels\\AboutViewModel.cs",
+              "RelativeToolTip": "MVVM\\ViewModels\\AboutViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T13:18:58.847Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TesterModel.cs",
-              "DocumentMoniker": "D:\\C-lang Projects\\csharp\\CursedWork4sem\\NetworkSpeedTester\\MVVM\\Models\\TesterModel.cs",
-              "RelativeDocumentMoniker": "MVVM\\Models\\TesterModel.cs",
-              "ToolTip": "D:\\C-lang Projects\\csharp\\CursedWork4sem\\NetworkSpeedTester\\MVVM\\Models\\TesterModel.cs",
-              "RelativeToolTip": "MVVM\\Models\\TesterModel.cs",
-              "ViewState": "AQIAAK0BAAAAAAAAAAAAwD4BAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T12:46:25.55Z",
+              "Title": "AboutView.xaml",
+              "DocumentMoniker": "D:\\C-lang Projects\\csharp\\CursedWork4sem\\NetworkSpeedTester\\MVVM\\Views\\AboutView.xaml",
+              "RelativeDocumentMoniker": "MVVM\\Views\\AboutView.xaml",
+              "ToolTip": "D:\\C-lang Projects\\csharp\\CursedWork4sem\\NetworkSpeedTester\\MVVM\\Views\\AboutView.xaml",
+              "RelativeToolTip": "MVVM\\Views\\AboutView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-20T08:32:15.257Z",
               "EditorCaption": ""
             }
           ]

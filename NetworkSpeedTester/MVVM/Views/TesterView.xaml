@@ -116,7 +116,7 @@
                                         Grid.RowSpan="3"
                                         Margin="15 0 15 0"
                                         DataContext="{Binding Tester}"
-                                        CurrValue="0"
+                                        CurrValue="{Binding CurrentValue}"
                                         Percentage="{Binding CurrentPercentage}"/>
         <Button Grid.Column="1"
                 Grid.Row="5"

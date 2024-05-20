@@ -228,6 +228,11 @@
     <Resource Include="Resources\Images\ping.png" />
     <Resource Include="Resources\Images\upload.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\github-logo.png" />
+    <Resource Include="Resources\Images\linkedin-logo.png" />
+    <Resource Include="Resources\Images\telegram-logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\System.Text.Json.6.0.2\build\System.Text.Json.targets" Condition="Exists('packages\System.Text.Json.6.0.2\build\System.Text.Json.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

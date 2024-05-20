@@ -8,8 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/download.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/ping.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/upload.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/github-logo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/linkedin-logo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/telegram-logo.png")]
 
 
