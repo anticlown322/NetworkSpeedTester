@@ -1,0 +1,82 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\C-lang Projects\\csharp\\CursedWork4sem\\NetworkSpeedTester\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{18549961-B9AC-4AC1-BFD2-E2CAA66C340F}|NetworkSpeedTester.csproj|d:\\c-lang projects\\csharp\\cursedwork4sem\\networkspeedtester\\mvvm\\views\\helpview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{18549961-B9AC-4AC1-BFD2-E2CAA66C340F}|NetworkSpeedTester.csproj|solutionrelative:mvvm\\views\\helpview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18549961-B9AC-4AC1-BFD2-E2CAA66C340F}|NetworkSpeedTester.csproj|d:\\c-lang projects\\csharp\\cursedwork4sem\\networkspeedtester\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{18549961-B9AC-4AC1-BFD2-E2CAA66C340F}|NetworkSpeedTester.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18549961-B9AC-4AC1-BFD2-E2CAA66C340F}|NetworkSpeedTester.csproj|d:\\c-lang projects\\csharp\\cursedwork4sem\\networkspeedtester\\mvvm\\views\\aboutview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{18549961-B9AC-4AC1-BFD2-E2CAA66C340F}|NetworkSpeedTester.csproj|solutionrelative:mvvm\\views\\aboutview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\C-lang Projects\\csharp\\CursedWork4sem\\NetworkSpeedTester\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "D:\\C-lang Projects\\csharp\\CursedWork4sem\\NetworkSpeedTester\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-20T15:38:52.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AboutView.xaml",
+              "DocumentMoniker": "D:\\C-lang Projects\\csharp\\CursedWork4sem\\NetworkSpeedTester\\MVVM\\Views\\AboutView.xaml",
+              "RelativeDocumentMoniker": "MVVM\\Views\\AboutView.xaml",
+              "ToolTip": "D:\\C-lang Projects\\csharp\\CursedWork4sem\\NetworkSpeedTester\\MVVM\\Views\\AboutView.xaml",
+              "RelativeToolTip": "MVVM\\Views\\AboutView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-20T15:14:05.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HelpView.xaml",
+              "DocumentMoniker": "D:\\C-lang Projects\\csharp\\CursedWork4sem\\NetworkSpeedTester\\MVVM\\Views\\HelpView.xaml",
+              "RelativeDocumentMoniker": "MVVM\\Views\\HelpView.xaml",
+              "ToolTip": "D:\\C-lang Projects\\csharp\\CursedWork4sem\\NetworkSpeedTester\\MVVM\\Views\\HelpView.xaml",
+              "RelativeToolTip": "MVVM\\Views\\HelpView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-20T15:14:00.898Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--Icons-->
+    <Image x:Key="CloseWindow" Source="../../Resources/Icons/close.png"/>
+    <Image x:Key="MinimizeWindow" Source="../../Resources/Icons/minimize.png"/>
+    
+    <!--Images-->
+    <Image x:Key="Upload" Source="../../Resources/Images/upload.png"/>
+    <Image x:Key="Download" Source="../../Resources/Images/download.png"/>
+    <Image x:Key="Ping" Source="../../Resources/Images/upload.png"/>
+    <BitmapImage  x:Key="Github" UriSource="../../Resources/Images/github-logo.png"/>
+    <BitmapImage  x:Key="Telegram" UriSource="../../Resources/Images/telegram-logo.png"/>
+    <BitmapImage  x:Key="Linkedin" UriSource="../../Resources/Images/linkedin-logo.png"/>
+</ResourceDictionary>
