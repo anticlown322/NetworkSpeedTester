@@ -1,5 +1,5 @@
 > [!NOTE]
-> This repository will not be updated in the future. I hope it helps someone at least a little
+> Кто за курсовой - файлы лежат вот [здесь](assets/files/).
 
 # :eyes: Overview
 
